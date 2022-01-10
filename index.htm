@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>tst</title>
+        <style>
+            .star-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row-reverse;
+            }
+
+            .star-wrapper a {
+                position: relative;
+                
+                display: inline-block;
+                width: 0;
+                height: 0;
+                
+                margin-left: .9em;
+                margin-right: .9em;
+                margin-bottom: 1.2em;
+                
+                border-right:  .3em solid transparent;
+                border-bottom: .7em  solid #BDBDBD;
+                border-left:   .3em solid transparent;
+
+                /* Controlls the size of the stars. */
+                font-size: 20px;
+            }
+                
+            .star-wrapper a::before, .star-wrapper a::after {
+                    content: '';
+                    
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    
+                    position: absolute;
+                    top: .6em;
+                    left: -1em;
+                
+                    border-right:  1em solid transparent;
+                    border-bottom: .7em  solid #BDBDBD;
+                    border-left:   1em solid transparent;
+                
+                    transform: rotate(-35deg);
+            }
+                
+            .star-wrapper a::after {  
+                    transform: rotate(35deg);
+            }
+            
+            .star-wrapper a:hover ~ * {
+                border-bottom: .7em  solid #0097A7;
+                border-bottom-color: #0097A7 !important;
+            }
+
+            .star-wrapper a:hover ~ *::before, .star-wrapper a:hover ~ *::after {
+                border-bottom: .7em  solid #0097A7;
+                border-bottom-color: #0097A7 !important;
+            }
+
+            .star-wrapper a:hover, .star-wrapper a:hover::after, .star-wrapper a:hover::before {
+                border-bottom: .7em  solid #0097A7;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="star-wrapper">
+            <a href="https://www.xyz/review?stars=5" title="5 stars"></a>
+            <a href="https://www.xyz/review?stars=4" title="4 stars"></a>
+            <a href="https://www.xyz/review?stars=3" title="3 stars"></a>
+            <a href="https://www.xyz/review?stars=2" title="2 stars"></a>
+            <a href="https://www.xyz/review?stars=1" title="1 star"></a>
+        </div>
+    </body>
+</html>
